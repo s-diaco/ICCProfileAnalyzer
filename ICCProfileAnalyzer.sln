@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICCProfileAnalyzer", "ICCProfileAnalyzer\ICCProfileAnalyzer.csproj", "{B9CA5CDC-D1A7-48FB-A990-00EA4D44B782}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColorProfileInfo", "ColorProfileInfo\ColorProfileInfo.csproj", "{04D064CA-855B-4918-A23E-417D6A8740F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9CA5CDC-D1A7-48FB-A990-00EA4D44B782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9CA5CDC-D1A7-48FB-A990-00EA4D44B782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9CA5CDC-D1A7-48FB-A990-00EA4D44B782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9CA5CDC-D1A7-48FB-A990-00EA4D44B782}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D064CA-855B-4918-A23E-417D6A8740F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D064CA-855B-4918-A23E-417D6A8740F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D064CA-855B-4918-A23E-417D6A8740F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D064CA-855B-4918-A23E-417D6A8740F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
