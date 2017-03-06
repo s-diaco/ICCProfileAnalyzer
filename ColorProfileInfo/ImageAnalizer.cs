@@ -16,17 +16,30 @@ namespace ColorProfileInfo
             System.IO.Stream stream = sr.BaseStream;
 
             string retVal = "";
-            using (var bitmap = new Aurigma.GraphicsMill.Bitmap(stream))
+            using (var reader = new Aurigma.GraphicsMill.Codecs.Psd.PsdReader(stream))
             {
-                for (int i = 0; i < bitmap.Channels.Count; i++)
-                {
-                    retVal += bitmap.Channels[i].Id + ",";
+                retVal = reader.PixelFormat.ToString();
+                foreach (PixelFormat pf in reader.SupportedPixelFormats)
+                { 
+                    retVal += pf.ToString();
                 }
-                var cyanBitmap = bitmap.Channels[Aurigma.GraphicsMill.Channel.Cyan];
-                cyanBitmap.Save(@"Images\Output\Cmyk_test_Channel_C.tif");
+                //read layers and save raster layers in PNG files
+                for (int i = 0; i < reader.Frames.Count; i++)
+                {
+                    using (var frame = reader.Frames[i])
+                    {
+                        Console.WriteLine("Frame " + frame.Index + " is processing. Frame type is " + frame.Type + ".");
 
-                var alphaBitmap = bitmap.Channels[Aurigma.GraphicsMill.Channel.Yellow];
-                alphaBitmap.Save(@"Images\Output\Cmyk_test_Channel_A.tif");
+                        if (frame.Type == Aurigma.GraphicsMill.Codecs.Psd.FrameType.Raster)
+                        {
+                            using (var bitmap = frame.GetBitmap())
+                            {
+                                bitmap.Save(@"Images\Output\frame_" + i + ".png");
+                                retVal += i + ",";
+                            }
+                        }
+                    }
+                }
             }
             return retVal;
         }

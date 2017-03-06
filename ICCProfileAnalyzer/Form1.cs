@@ -27,7 +27,7 @@ namespace ICCProfileAnalyzer
                 System.IO.StreamReader sr = new
                    System.IO.StreamReader(openFileDialog1.FileName);
                 ImageAnalizer IA = new ImageAnalizer();
-                label1.Text = IA.GetChannelsCount(sr);
+                // label1.Text = IA.GetChannelsCount(sr);
                 label2.Text = IA.GetChannelIds(sr);
                 sr.Close();
             }
